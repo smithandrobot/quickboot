@@ -20,5 +20,4 @@ if [ "$database" = "" ]; then
 	exit
 fi
 
-
-./general.sh $folder $username $password $database 'git@github.com:smithandrobot/ni_stem.git'
+curl -s https://raw.github.com/smithandrobot/quickboot/master/general.sh | bash -s $folder $username $password $database 'git@github.com:smithandrobot/ni_stem.git'
