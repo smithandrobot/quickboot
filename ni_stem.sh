@@ -1,3 +1,5 @@
+# curl -s https://raw.github.com/smithandrobot/quickboot/master/ni_stem.sh | bash
+
 read -e -p "Local folder: " folder
 read -e -p "Local database username: " username
 read -e -p "Local database password: " password
