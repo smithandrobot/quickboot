@@ -1,4 +1,4 @@
-# curl -s https://raw.github.com/smithandrobot/quickboot/master/ni_stem.sh | bash
+# bash <(curl -s https://raw.github.com/smithandrobot/quickboot/master/ni_stem.sh)
 
 read -e -p "Local folder: " folder
 read -e -p "Local database username: " username
