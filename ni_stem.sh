@@ -4,6 +4,8 @@ read -e -p "Local folder: " folder
 read -e -p "Local database username: " username
 read -e -p "Local database password: " password
 read -e -p "Local database name: " database
+repo='git@github.com:smithandrobot/ni_stem.git'
+fabric='local_pull_dev'
 
 if [ "$folder" = "" ]; then
 	echo "Must specify folder"
@@ -22,4 +24,4 @@ if [ "$database" = "" ]; then
 	exit
 fi
 
-curl -s https://raw.github.com/smithandrobot/quickboot/master/general.sh | bash -s $folder $username $password $database 'git@github.com:smithandrobot/ni_stem.git'
+curl -s https://raw.github.com/smithandrobot/quickboot/master/general.sh | bash -s $folder $username $password $database $repo $fabric

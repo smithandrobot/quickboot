@@ -3,6 +3,7 @@ username=$2
 password=$3
 database=$4
 repo=$5
+fabric=$6
 
 if [ "$folder" = "" ]; then
 	echo "Must specify folder"
@@ -24,6 +25,10 @@ if [ "$repo" = "" ]; then
 	echo "Must specify git repo"
 	exit
 fi
+if [ "$fabric" = "" ]; then
+	echo "Must specify fabric bootstrap command"
+	exit
+fi
 
 echo 'Installing Drupal'
 mysqladmin --user=$username --password=$password create $database
@@ -34,3 +39,6 @@ echo 'Cloning git repo'
 rm -rf sites/all
 git clone $repo sites/all
 echo 'Go setup apache config'
+
+cd sites/all
+fab $fabric
